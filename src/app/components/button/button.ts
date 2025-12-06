@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class Button {
-  const() {
-    console.log('Button component initialized');
+  const(event: any) {
+    event.preventDefault();
+    this.buttonClicked.emit();
   }
+  @Output() buttonClicked = new EventEmitter<void>();
 }
