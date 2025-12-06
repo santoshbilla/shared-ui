@@ -1,1 +1,1 @@
-export * from './components/button/shared-ui.module';
+export * from './components/button/button';
